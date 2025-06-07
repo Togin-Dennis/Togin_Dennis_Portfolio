@@ -1,0 +1,194 @@
+.Profilediv {
+ 
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: clamp(250px,45vw,900px);
+  overflow: hidden;
+  position: relative;
+  
+
+}
+
+.BackgroundText {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: clamp(15vw,16vw,17vw);
+  left: 50%;
+  top: -5%;
+  color: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  padding: 0%;
+  margin: 0%;
+  animation: respacingbgtext 2s ease-in-out forwards;
+}
+@keyframes respacingbgtext {
+  0% {
+ 
+letter-spacing: 100px;
+  }
+
+  100% {
+letter-spacing: normal;
+  
+  }
+}
+.profilepicdiv
+{
+     position: absolute;
+     right: 5%;
+     overflow: hidden;
+     top: 6%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 2;
+     bottom: 0px;
+     flex-direction: column;
+     
+}  
+
+.Profilepic {
+  position: relative;
+  width: clamp(100px,35vw,35vw);
+  animation: floatImage 2s ease-in-out forwards;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(150px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+ 
+}
+
+.profilefade
+{
+    margin-left: 12%;
+    position: absolute;
+    width: 63.5%;
+    height: 75%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.099), rgb(0, 0, 0));
+
+    bottom: 0;
+}
+.profileName
+{     font-size: clamp(9px,1vw,25px);
+      color: white;
+      position: relative;
+      background-color: rgb(23, 23, 23);
+      width: 63%;
+      margin-right: -12%;
+      text-align: center;
+      border: 0.4px solid rgba(255, 255, 255, 0.619);
+}
+.profileName:hover{
+      background-color:orangered;
+}
+.Textname{
+  animation: nameanimation 1.8s ease-out infinite;
+}
+
+@keyframes nameanimation {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+    letter-spacing: 2px;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+    letter-spacing: 2px;
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+    letter-spacing: 2px;
+  }
+}
+.Profiledetailsdiv
+{
+    width: 90vw;
+    margin-top: 21.2%;
+    left: 5%;
+    position: absolute;
+    height: min-content;
+}
+
+
+
+.Position {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size:  clamp(19px,5vw,80px);
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: 900;
+  animation: respacing 2s ease-in-out forwards;
+}
+
+@keyframes respacing {
+  0% {
+ 
+letter-spacing: 40px;
+  }
+
+  100% {
+letter-spacing: normal;
+  
+  }
+}
+
+.name
+{
+     font-size:  clamp(9px,3vw,30px);
+     letter-spacing: 5px;
+     margin: 0%;
+     color: grey;
+   
+     margin-top: 2%;
+     font-weight: 900;
+}
+.contactbutton
+{
+    font-size:  clamp(11px,1vw,19px);
+    margin-top: 2%;
+    color: white;
+    background-color: rgb(27, 27, 27);
+    border: none;
+    padding: 2%;
+    font-weight: 700;
+}
+.contactbutton:hover
+{
+    background-color:orangered;
+}
+.downbutton
+{
+  position: absolute;
+ color: white;
+  left: 50%;
+  bottom: 1%;
+  animation: bounce 1s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+
+
+
+}
+.mouseicon {
+  width: clamp(18px, 4vw, 40px);
+  height: clamp(18px, 4vw, 40px);
+}
+
+.downicon {
+  width: clamp(14px, 3vw, 30px);
+  height: clamp(14px, 3vw, 30px);
+}

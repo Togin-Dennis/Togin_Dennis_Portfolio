@@ -1,0 +1,83 @@
+.skillssection
+{
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    display: flex; 
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.skills-title
+{
+
+color: white;
+font-size: clamp(15px,4vw,40px);
+   padding: 0;
+
+   margin: 0;
+  margin-top: 7%;
+   margin-bottom: clamp(7px,1vw,15px);
+}
+.skills-subtitle
+{
+    padding: 0;
+    margin-top: 0;
+color: grey;
+
+}
+.skillgrid
+{
+    
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    width: 60%;
+    gap: 30px;
+    animation: gapanimation 1s 0.5s ease-in-out forwards;
+}
+@keyframes gapanimation {
+  0%   { margin-left: 0px; }
+  50%  { margin-left: 300px; }    
+  75%  { margin-left: -200px; }  
+  90%  { margin-left: 50px; }     
+  100% { margin-left: 0px; }      
+}
+.skill-card
+{
+background-color: #1a1a1a;
+border-radius: 10px;
+padding: 20px;
+color: white;
+ transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.skill-card:hover{
+   background-color: orangered; 
+   animation: rotateanimation 1s ease-in-out forwards;
+}
+@keyframes rotateanimation {
+
+  0%   { transform: rotatey(0deg); }
+  100% { transform: rotatey(360deg); }  
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  
+}
+@media (max-width: 900px) {
+.skillgrid
+{
+  width: 90%;
+}
+
+}
+@media (max-width: 900px) {
+.skillgrid
+{
+  animation: none;
+}
+
+}
