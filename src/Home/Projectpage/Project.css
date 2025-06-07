@@ -1,152 +1,245 @@
-.Projectmaindiv
-{
-background-color: black;
-overflow: hidden;
-text-align: center;
-
-}
-.Boxwrap
-{
-
-flex-wrap: wrap;
-display: flex;
-justify-content: center;
-gap: 40px;
-}
-.Project-title
-{
-    color: white;
-    font-size: clamp(15px, 4vw, 40px);
-    padding: 0;
-    margin: 0;
-    margin-top: 7%;
-}
-.Project-subtitle
-{
-    padding: 0;
-    margin-top: 1%;
-    color: grey;
+.Projectmaindiv {
+  background: linear-gradient(to bottom, #025e53, #000000);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 50px;
 }
 
-.projectbox
-{
-   display: flex;
-   flex-direction: column;
-    border-radius: 20px;
-    background-color: rgb(17, 17, 17);
-    width: 400px;
-    height: 528px;
-  
-     box-shadow: 0 0 20px rgba(0, 255, 225, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.projectbox:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0, 255, 225, 0.4);
+.Boxwrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  padding: 30px 20px;
 }
 
-.projectboxwrapper
-{
-     margin-top: 2%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.Project-title {
+  color: #00ffe1;
+  font-size: clamp(20px, 5vw, 48px);
+  padding: 0;
+  margin: 0;
+  margin-top: 8%;
+  font-weight: 900;
+  letter-spacing: 3px;
+ 
+  text-shadow: 0 0 8px #00ffe1aa;
 }
-.projectimage
-{
-    width: 100%;
-    height: 30%;
-    position: relative;
-    object-fit: cover;
-    border-radius:20px 20px 0 0;
-}
-.Projecttitle
-{
-    padding: 1% 5% 0px 5%;
-    color: white;
-    text-align: left;
-}
-.Projectdescription
-{
-     padding: 0% 5% 0px 5%;
-    color: grey;
-    text-align: left;
-     display: -webkit-box;       /* Necessary for line clamping */
-    -webkit-line-clamp: 5;      /* Limit to 7 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;           /* Hide overflow text */
-    text-overflow: ellipsis;    /* Show ellipsis (...) */
-}
-.languageused
-{
-   
-    color: rgb(0, 0, 0);
-   background: linear-gradient(135deg,#00ffe1, #118cff);
-    width: min-content;
-    padding: 1%;
-    border-radius: 10px;
-    font-weight: 500;
-    white-space: nowrap;
-    margin: 0;
 
-    
+.Project-subtitle {
+  padding: 0;
+  margin-top: 1%;
+  color: #55d4d3aa;
+  font-weight: 400;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px #00ffe188;
 }
-.languageusedwrapper
-{
-    
-     margin:1% 5% 0% 5%;
-     display:flex ;
-     flex-wrap: wrap;
-     justify-content: stretch;
-     gap: 10px;
-     margin-top: auto
-}
-.Buttonwrapper
-{
-     border-top: 2px solid rgb(56, 56, 56);
-     margin-top: 6%;
-     display:flex ;
-     cursor: pointer;
-  
-}
-.buttonicon
-{
- padding-top: 5%;
-flex: 1;
- display:flex ;
- color: white;
- justify-content: center;
- align-items: center;
-  padding-bottom: 4%;
+
+.projectbox {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: rgba(17, 17, 17, 0.85);
+  border: 2px solid transparent;
+  width: 400px;
+  min-height: 540px;
+  box-shadow:
+    0 8px 32px 0 rgba(0, 255, 225, 0.25),
+    inset 0 0 10px rgba(0, 255, 225, 0.1);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border 0.4s ease;
+  position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
-.Projectbuttonview,.Projectbuttoncode
-{
-    flex: 1;
-    color: white;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-.Projectbuttonview
-{
-     border-right: 2px solid rgb(56, 56, 56);
-}
-.buttonicon:hover
-{
- background-color: #901a05;
-border-radius: 10px;
 
+.projectbox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, #00ffe1, #118cff);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
 }
+
+.projectbox:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 12px 40px 0 rgba(0, 255, 225, 0.6),
+    inset 0 0 20px rgba(0, 255, 225, 0.3);
+  border: 2px solid transparent;
+}
+
+.projectbox:hover::before {
+  opacity: 1;
+}
+
+.projectboxwrapper {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.projectimage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 8px 24px rgba(0, 255, 225, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.projectbox:hover .projectimage {
+  transform: scale(1.05);
+}
+
+.Projecttitle {
+  padding: 1.5% 5% 0 5%;
+  color: #00ffe1;
+  text-align: left;
+  font-weight: 800;
+  font-size: clamp(20px, 2.5vw, 30px);
+  margin-bottom: 12px;
+  text-shadow: 0 0 6px #00ffe1aa;
+}
+
+.Projectdescription {
+  padding: 0 5% 0 5%;
+  color: #aad4d3cc;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 7em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.languageusedwrapper {
+  margin: 1% 5% 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.languageused {
+  color: #001f27;
+  background: linear-gradient(135deg, #00ffe1, #118cff);
+  padding: 8px 16px;
+  border-radius: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  box-shadow:
+    0 0 10px #00ffe1aa,
+    inset 0 0 5px #118cffcc;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.languageused:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 14px #00fff7cc,
+    inset 0 0 8px #00fff7ff;
+}
+
+.Buttonwrapper {
+  border-top: 2px solid #113344;
+  margin-top: 6%;
+  display: flex;
+  cursor: pointer;
+  gap: 0;
+  height: 52px;
+  border-radius: 0 0 24px 24px;
+  overflow: hidden;
+  background: rgba(0, 255, 225, 0.1);
+  box-shadow: inset 0 0 10px #00ffe1aa;
+  transition: background-color 0.3s ease;
+}
+
+.Buttonwrapper:hover {
+  background: rgba(0, 255, 225, 0.15);
+}
+
+.buttonicon {
+  flex: 1;
+  display: flex;
+  color: #00ffe1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.8px;
+  user-select: none;
+  gap: 10px;
+}
+
+.Projectbuttonview,
+.Projectbuttoncode {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Projectbuttonview {
+  border-right: 2px solid #113344;
+}
+
+.buttonicon:hover {
+  background-color: #00ffe1;
+  color: #001f27;
+  box-shadow: 0 0 12px #00ffe1aa;
+}
+
 @media (max-width: 768px) {
-.Boxwrap
-{
-flex-wrap: none;
-flex-direction: column;
-}
-.projectbox
-{
-    width: 90%;
+  .Boxwrap {
+    flex-direction: column;
+    gap: 36px;
+    padding: 20px 10px;
+  }
 
-}
+  .projectbox {
+    width: 90%;
+    min-height: auto;
+  }
+
+  .Projecttitle {
+    font-size: 2rem;
+  }
+
+  .Projectdescription {
+    font-size: 1rem;
+    -webkit-line-clamp: 6;
+    min-height: 8em;
+  }
+
+  .Buttonwrapper {
+    height: 48px;
+  }
 }

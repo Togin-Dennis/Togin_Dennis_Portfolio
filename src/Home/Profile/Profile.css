@@ -1,188 +1,159 @@
 .Profilediv {
- 
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   width: 100%;
-  height: clamp(250px,45vw,900px);
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allow vertical scroll if needed */
   position: relative;
-  
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px; /* Prevent text from hitting bottom edge */
 }
+
 
 .BackgroundText {
   position: absolute;
-  transform: translateX(-50%);
-  font-size: clamp(15vw,16vw,17vw);
+  top: 5%;
   left: 50%;
-  top: -5%;
+  transform: translateX(-50%);
+  font-size: clamp(12vw, 15vw, 20vw);
   color: rgba(255, 255, 255, 0.03);
-  overflow: hidden;
-  padding: 0%;
-  margin: 0%;
   animation: respacingbgtext 2s ease-in-out forwards;
+  user-select: none;
 }
-@keyframes respacingbgtext {
-  0% {
- 
-letter-spacing: 100px;
-  }
 
-  100% {
-letter-spacing: normal;
-  
-  }
+@keyframes respacingbgtext {
+  0% { letter-spacing: 100px; }
+  100% { letter-spacing: normal; }
 }
-.profilepicdiv
-{
-     position: absolute;
-     right: 5%;
-     overflow: hidden;
-     top: 6%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     z-index: 2;
-     bottom: 0px;
-     flex-direction: column;
-     
-}  
+
+.profilepicdiv {
+  position: relative;
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
 
 .Profilepic {
-  position: relative;
-  width: clamp(100px,35vw,35vw);
+  width: clamp(120px, 35vw, 300px);
+  transform: translateX(-6%); /* move slightly left */
   animation: floatImage 2s ease-in-out forwards;
 }
 
 @keyframes floatImage {
   0% {
-    transform: translateY(150px);
+    transform: translate( -6%, 100px);
+    opacity: 0;
   }
-  100%{
-    transform: translateY(0px);
+  100% {
+    transform: translate(-6%, 0px);
+    opacity: 1;
   }
- 
+}
+.profilefade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, black, transparent);
 }
 
-.profilefade
-{
-    margin-left: 12%;
-    position: absolute;
-    width: 63.5%;
-    height: 75%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.099), rgb(0, 0, 0));
+.profileName {
+  margin-top: 10px;
+  background-color: rgb(23, 23, 23);
+  color: white;
+  padding: 8px 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  font-size: clamp(12px, 1.2vw, 20px);
+  text-align: center;
+  transition: background 0.3s;
+}
+.profileName:hover {
+  background-color: orangered;
+}
 
-    bottom: 0;
-}
-.profileName
-{     font-size: clamp(9px,1vw,25px);
-      color: white;
-      position: relative;
-      background-color: rgb(23, 23, 23);
-      width: 63%;
-      margin-right: -12%;
-      text-align: center;
-      border: 0.4px solid rgba(255, 255, 255, 0.619);
-}
-.profileName:hover{
-      background-color:orangered;
-}
-.Textname{
-  animation: nameanimation 1.8s ease-out infinite;
+.Textname {
+  animation: nameanimation 2s ease-out infinite;
 }
 
 @keyframes nameanimation {
-  0% {
+  0%, 100% {
     opacity: 0.7;
     transform: scale(1);
-    letter-spacing: 2px;
   }
   50% {
     opacity: 1;
-    transform: scale(1.03);
-    letter-spacing: 2px;
+    transform: scale(1.05);
   }
-  100% {
-    opacity: 0.7;
-    transform: scale(1);
-    letter-spacing: 2px;
-  }
-}
-.Profiledetailsdiv
-{
-    width: 90vw;
-    margin-top: 21.2%;
-    left: 5%;
-    position: absolute;
-    height: min-content;
 }
 
+.Profiledetailsdiv {
+  margin-top: 5vh;
+  text-align: center;
+  z-index: 3;
+  padding: 20px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 .Position {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size:  clamp(19px,5vw,80px);
-  margin: 0;
-  padding: 0;
+  font-family: Verdana, sans-serif;
+  font-size: clamp(22px, 6vw, 80px);
   color: white;
   font-weight: 900;
   animation: respacing 2s ease-in-out forwards;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 90vw;
 }
+
 
 @keyframes respacing {
-  0% {
- 
-letter-spacing: 40px;
-  }
-
-  100% {
-letter-spacing: normal;
-  
-  }
+  0% { letter-spacing: 40px; }
+  100% { letter-spacing: normal; }
 }
 
-.name
-{
-     font-size:  clamp(9px,3vw,30px);
-     letter-spacing: 5px;
-     margin: 0%;
-     color: grey;
-   
-     margin-top: 2%;
-     font-weight: 900;
+.name {
+  font-size: clamp(14px, 2.5vw, 28px);
+  color: grey;
+  font-weight: 700;
+  margin: 10px 0;
 }
-.contactbutton
-{
-    font-size:  clamp(11px,1vw,19px);
-    margin-top: 2%;
-    color: white;
-    background-color: rgb(27, 27, 27);
-    border: none;
-    padding: 2%;
-    font-weight: 700;
+
+.contactbutton {
+  font-size: clamp(12px, 1.2vw, 18px);
+  color: white;
+  background-color: rgb(27, 27, 27);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.contactbutton:hover
-{
-    background-color:orangered;
+.contactbutton:hover {
+  background-color: orangered;
 }
-.downbutton
-{
-  position: absolute;
- color: white;
-  left: 50%;
-  bottom: 1%;
-  animation: bounce 1s ease-in-out infinite;
+
+.downbutton {
+  color: white;
+  margin-top: 30px;
+  animation: bounce 1.5s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-
-
-
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
 }
+
 .mouseicon {
   width: clamp(18px, 4vw, 40px);
   height: clamp(18px, 4vw, 40px);
@@ -191,4 +162,5 @@ letter-spacing: normal;
 .downicon {
   width: clamp(14px, 3vw, 30px);
   height: clamp(14px, 3vw, 30px);
+  margin-top: 5px;
 }

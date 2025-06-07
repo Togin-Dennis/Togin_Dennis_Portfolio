@@ -1,84 +1,109 @@
+/* Updated About Section CSS */
+
 .AboutMaindiv {
-    background-color: rgb(0, 0, 0);
+    background: linear-gradient(to bottom,  #0d0d0d, #025e53); /* Rich top-to-bottom gradient */
     overflow: hidden;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
+    padding-top: 60px;
+    min-height: 100vh;
 }
 
+
 .About-title {
-    color: white;
-    font-size: clamp(15px, 4vw, 40px);
-    padding: 0;
-    margin: 0;
-    margin-top: 7%;
+  font-size: clamp(24px, 6vw, 50px);
+  font-weight: 900;
+  color: #00ffe1;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #00ffe1;
+  animation: fadeSlideUp 1s ease-in-out;
 }
 
 .About-subtitle {
-    padding: 0;
-    margin-top: 1%;
-    color: grey;
-}
-.centering
-{
-    margin-top: 3%;
-    width: 100%;
-   display: flex;
-   justify-content: center; 
-    align-items: center;
-}
-.aboutimageandtext
-{
-    padding: 50px;
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    gap: 30px;
-    background-color: rgb(16, 16, 16);
-    border-radius: 30px;
-    justify-content: center; 
-    align-items: center;
-    box-shadow: 0 0 20px #015d52;
-  
-    
+  color: #aaa;
+  font-size: clamp(14px, 3vw, 20px);
+  margin-bottom: 40px;
+  animation: fadeSlideUp 1.2s ease-in-out;
 }
 
-.coloredImage
-{
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aboutimageandtext {
+  display: flex;
+  flex-direction: row;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow: 0 0 20px #00ffe1;
+  gap: 40px;
+  align-items: center;
+  animation: fadeInScale 1.5s ease-in-out;
+}
+
+.coloredImage {
   width: 220px;
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 20px #00ffe1;
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 25px #00ffe1, 0 0 50px #00ffe1 inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .coloredImage:hover {
-  animation: pulseGlow 1s ease-in-out forwards 0.5s;
-}
-@keyframes pulseGlow {
-  0%   { box-shadow: 0 0 10px #00ffe1; transform: scale(1); }
-  50%  { box-shadow: 0 0 25px #00ffe1; transform: scale(1.05); }
-  100% { box-shadow: 0 0 10px #00ffe1; transform: scale(1); }
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffe1, 0 0 60px #00ffe1 inset;
 }
 
-
-.abouttext
-{
-     font-size: 1.1rem;
-     line-height: 1.8;
-     color: #ccc;
-     text-align: start;
+.abouttext {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  text-align: left;
+  max-width: 600px;
 }
+
 @media (max-width: 768px) {
   .aboutimageandtext {
     flex-direction: column;
-    margin-top: 5%;
+    padding: 30px;
   }
-  .abouttext
-  {
-    font-size:15px;
+
+  .abouttext {
+    font-size: 0.95rem;
     text-align: justify;
-    
+  }
+
+  .coloredImage {
+    width: 160px;
+    height: 160px;
   }
 }
 
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Set entire page background black */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: white; /* default text color to white for contrast */
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  height: 100%;
+  width: 100%;
+}
